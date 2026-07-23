@@ -18,7 +18,7 @@ def login(user:OAuth2PasswordRequestForm=Depends(),db:Session=Depends(get_db)):
     if not utils.verify(user.password,user1.password):
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN)
 
-    access_token=oauth.access_token({"email":user1.email})
+    access_token=oauth.access_token({"email":user1.email,"username":user1.username})
 
     return {
             "access_token": access_token,
