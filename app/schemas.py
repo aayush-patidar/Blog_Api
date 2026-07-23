@@ -26,6 +26,9 @@ class login(BaseModel):
 class TokenRespo(BaseModel):
     access_token:str
     token_type:str
+class TokenData(BaseModel):
+    username:str
+    email:EmailStr
 
 
 
